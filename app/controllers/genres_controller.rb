@@ -3,22 +3,22 @@ class GenresController < ApplicationController
     @genre = Genre.find_by(id: params[:id])
   end
   
-  def new #
+  def new
     @genre = Genre.new
   end 
   
-  def create#
+  def create
     @genre = Genre.create(params.require(:genre).permit(:name))
 	  redirect_to genre_path(@genre)
   end
   
-  def update#
+  def update
 	  @genre = Genre.find(params[:id])
 	  @genre.update(params.require(:genre).permit(:name))
 	  redirect_to genre_path(@genre)
 	end
 
-	def edit#
+	def edit
 	  @genre = Genre.find(params[:id])
 	end
 end
