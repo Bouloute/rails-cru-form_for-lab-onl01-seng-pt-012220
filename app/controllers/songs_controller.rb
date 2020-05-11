@@ -8,6 +8,7 @@ class SongsController < ApplicationController
   end 
   
   def create
+    binding.pry
     @song = Song.create(params.require(:song).permit(:name))
 	  redirect_to song_path(@song)
   end
