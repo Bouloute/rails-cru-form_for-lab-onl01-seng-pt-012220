@@ -1,4 +1,4 @@
-class GenresController < ApplicationController
+class SongsController < ApplicationController
   def show
     @genre = Genre.find_by(id: params[:id])
   end
