@@ -4,21 +4,21 @@ class SongsController < ApplicationController
   end
   
   def new
-    @genre = Genre.new
+    @song = Song.new
   end 
   
   def create
-    @genre = Genre.create(params.require(:genre).permit(:name))
-	  redirect_to genre_path(@genre)
+    @song = Song.create(params.require(:song).permit(:name))
+	  redirect_to song_path(@song)
   end
   
   def update
-	  @genre = Genre.find(params[:id])
-	  @genre.update(params.require(:genre).permit(:name))
-	  redirect_to genre_path(@genre)
+	  @song = Song.find(params[:id])
+	  @song.update(params.require(:song).permit(:name))
+	  redirect_to song_path(@song)
 	end
 
 	def edit
-	  @genre = Genre.find(params[:id])
+	  @song = Song.find(params[:id])
 	end
 end
